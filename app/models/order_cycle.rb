@@ -222,7 +222,7 @@ class OrderCycle < ActiveRecord::Base
   end
 
   def exchanges_supplying(order)
-    exchanges.supplying_to(order.distributor).with_any_variant(order.variants)
+    exchanges.supplying_to(order.distributor).with_any_variant(order.variants.map(&:id))
   end
 
   def coordinated_by?(user)
