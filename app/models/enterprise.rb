@@ -91,7 +91,7 @@ class Enterprise < ActiveRecord::Base
     joins(:shipping_methods).
       joins(:payment_methods).
       merge(Spree::PaymentMethod.available).
-      select('DISTINCT enterprises.id')
+      select('DISTINCT enterprises.*')
   }
   scope :not_ready_for_checkout, lambda {
     # When ready_for_checkout is empty, ActiveRecord generates the SQL:
@@ -100,7 +100,7 @@ class Enterprise < ActiveRecord::Base
     # work around this, we use the "OR ?=0" clause to return all rows when there are
     # no enterprises ready for checkout.
     where('id NOT IN (?) OR ?=0',
-          Enterprise.ready_for_checkout,
+          Enterprise.ready_for_checkout.select('enterprises.id'),
           Enterprise.ready_for_checkout.count)
   }
   scope :is_primary_producer, -> { where(:is_primary_producer => true) }
