@@ -7,3 +7,11 @@ en:
     products:
       index:
         title: Products
+
+    orders:
+      index:
+        title: Orders
+
+    order_cycles:
+      index:
+        title: Order Cycles

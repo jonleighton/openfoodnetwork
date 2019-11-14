@@ -1,0 +1,4 @@
+%li.nav-item
+  = link_to url_for(controller: name, action: "index"), class: "nav-link #{"active" if controller_name == name}" do
+    %i{class: "fe fe-#{icon}"}
+    = t("next_admin.#{name}.index.title")

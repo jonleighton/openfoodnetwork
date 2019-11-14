@@ -1,27 +1,7 @@
 .header.p-0
   .container
     %ul.nav.nav-tabs.border-0.flex-column.flex-lg-row
-      %li.nav-item
-        = link_to root_path, class: "nav-link" do
-          %i.fe.fe-home
-          = t("next_admin.dashboard.index.title")
-
-      %li.nav-item
-        = link_to products_path, class: "nav-link" do
-          %i.fe.fe-package
-          = t("next_admin.products.index.title")
-
-      %li.nav-item
-        = link_to "#", class: "nav-link" do
-          %i.fe.fe-refresh-cw
-          Order Cycles
-
-      %li.nav-item
-        = link_to "#", class: "nav-link" do
-          %i.fe.fe-shopping-cart
-          Orders
-
-      %li.nav-item
-        = link_to "#", class: "nav-link" do
-          %i.fe.fe-file-text
-          Reports
+      = render partial: "nav_item", locals: { name: "dashboard", icon: "home" }
+      = render partial: "nav_item", locals: { name: "products", icon: "package" }
+      = render partial: "nav_item", locals: { name: "order_cycles", icon: "refresh-cw" }
+      = render partial: "nav_item", locals: { name: "orders", icon: "shopping-cart" }
