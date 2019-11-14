@@ -1,0 +1,19 @@
+%tbody
+  - product.variants.each_with_index do |variant, index|
+    %tr
+      - if index.zero?
+        %td= link_to product.name, edit_product_path(product)
+        %td= product.supplier.name
+      - else
+        %td{colspan: 2} &nbsp;
+
+      %td.text-right= variant.unit_to_display
+      %td.text-right= variant.display_amount
+
+      %td.text-right
+        - unless variant.on_demand
+          = variant.on_hand
+
+      %td.text-right
+        = link_to "#", class: "icon" do
+          %i.fe.fe-edit

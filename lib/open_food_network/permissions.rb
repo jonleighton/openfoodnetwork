@@ -1,3 +1,5 @@
+require_dependency "spree/product_decorator"
+
 module OpenFoodNetwork
   class Permissions
     def initialize(user)

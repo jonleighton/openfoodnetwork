@@ -1,0 +1,13 @@
+.card
+  .table-responsive
+    %table.table.table-hover.m-0
+      %thead
+        %tr
+          %th Product
+          %th Producer
+          %th.text-right Quantity
+          %th.text-right Price
+          %th.text-right Available
+          %th
+
+      = render partial: "product", collection: @products
