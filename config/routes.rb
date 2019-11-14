@@ -93,6 +93,8 @@ Openfoodnetwork::Application.routes.draw do
   mount Web::Engine, :at => '/'
   mount OrderManagement::Engine, :at => '/'
 
+  mount NextAdmin::Engine => "/admin/next"
+
   # Mount Spree's routes
   mount Spree::Core::Engine, :at => '/'
 end

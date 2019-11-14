@@ -1,0 +1,25 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title #{title} - OFN #{t(:administration)}
+    = csrf_meta_tags
+    = stylesheet_link_tag "next_admin/application"
+
+  %body
+    .page
+      .flex-fill
+        %header
+          .header
+            .container
+              %a{href: root_path}
+                %img{src: ContentConfig.logo.url, height: 40}
+
+          = render "nav"
+
+        .my-3.my-md-5
+          .container
+            .page-header
+              %h1.page-title= title
+
+            = yield

@@ -1,0 +1,9 @@
+en:
+  next_admin:
+    dashboard:
+      index:
+        title: Dashboard
+
+    products:
+      index:
+        title: Products

@@ -14,6 +14,7 @@ gem 'nokogiri', '>= 1.6.7.1'
 
 gem "order_management", path: "./engines/order_management"
 gem 'web', path: './engines/web'
+gem 'next_admin', path: './engines/next_admin'
 
 gem 'activerecord-postgresql-adapter'
 gem 'pg', '~> 0.21.0'
